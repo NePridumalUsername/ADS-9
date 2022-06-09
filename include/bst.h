@@ -36,12 +36,14 @@ class BST {
     }
 
     Node* searchNode(Node* root, T value) {
-        if (!root || root->value == value) {
+        if (!root) {
             return root;
         } else if (root->value > value) {
             return searchNode(root->left, value);
         } else if (root->value < value) {
             return searchNode(root->right, value);
+        } else {
+            return root;
         }
     }
 
